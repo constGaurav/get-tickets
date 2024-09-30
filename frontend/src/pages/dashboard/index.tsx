@@ -1,59 +1,65 @@
+import { useState } from "react";
+import CreateConcertModal from "./create-concert-modal";
 import styles from "./styles.module.css";
 
 const Dashboard = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <div>
-      <div className={styles["header"]}>
-        <h2> Dashboard</h2>
-        <button
-          onClick={() => {
-            console.log("Create new concert");
-          }}
-          className={styles["createConcertBtn"]}
-        >
-          Create new concert
-        </button>
-      </div>
+    <>
+      <div>
+        <div className={styles["header"]}>
+          <h2> Dashboard</h2>
+          <button
+            onClick={() => {
+              setIsOpen(true);
+            }}
+            className={styles["createConcertBtn"]}
+          >
+            Create new concert
+          </button>
+        </div>
 
-      <div className={styles["container"]}>
-        <h3>
-          Existing Concerts list with tickets quantities and remaining tickets
-        </h3>
+        <div className={styles["container"]}>
+          <h3>
+            Existing Concerts list with tickets quantities and remaining tickets
+          </h3>
 
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <th>S.No.</th>
-                <th>Concert name</th>
-                <th>Total Tickets</th>
-                <th>Sold Tickets</th>
-                <th>Remaining Tickets</th>
-                <th>Blocked tickets</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>S.No.</th>
+                  <th>Concert name</th>
+                  <th>Total Tickets</th>
+                  <th>Sold Tickets</th>
+                  <th>Remaining Tickets</th>
+                  <th>Blocked tickets</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
 
-            <tbody>
-              <tr>
-                <td>01</td>
-                <td>Cold play tickets</td>
-                <td>4545</td>
-                <td>4545</td>
-                <td>342/3255</td>
-                <th>1233</th>
-                <td>
-                  <span className={styles["action_btn"]}>
-                    <a href="#">Edit concert tickets</a>
-                    <a href="#">Copy link</a>
-                  </span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+              <tbody>
+                <tr>
+                  <td>01</td>
+                  <td>Cold play tickets</td>
+                  <td>4545</td>
+                  <td>4545</td>
+                  <td>342/3255</td>
+                  <th>1233</th>
+                  <td>
+                    <span className={styles["action_btn"]}>
+                      <a href="#">Edit concert tickets</a>
+                      <a href="#">Copy link</a>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
+      <CreateConcertModal isOpen={isOpen} setIsOpen={setIsOpen} />
+    </>
   );
 };
 
