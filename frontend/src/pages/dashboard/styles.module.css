@@ -56,7 +56,7 @@ table td {
     gap: 10px;
 }
 
-.action_btn>a {
+.action_btn>button {
     text-decoration: none;
     color: #444;
     background: #fff;
@@ -66,17 +66,18 @@ table td {
     font-weight: bold;
     border-radius: 3px;
     transition: 0.3s ease-in-out;
+    cursor: pointer;
 }
 
-.action_btn>a:nth-child(1) {
+.action_btn>button:nth-child(1) {
     border-color: #26a69a;
 }
 
-.action_btn>a:nth-child(2) {
+.action_btn>button:nth-child(2) {
     border-color: orange;
 }
 
-.action_btn>a:hover {
+.action_btn>button:hover {
     box-shadow: 0 3px 8px #0003;
 }
 

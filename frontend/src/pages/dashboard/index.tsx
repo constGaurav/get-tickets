@@ -1,9 +1,12 @@
 import { useState } from "react";
 import CreateConcertModal from "./create-concert-modal";
 import styles from "./styles.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <>
       <div>
@@ -48,8 +51,15 @@ const Dashboard = () => {
                   <th>1233</th>
                   <td>
                     <span className={styles["action_btn"]}>
-                      <a href="#">Edit concert tickets</a>
-                      <a href="#">Copy link</a>
+                      <button
+                        onClick={() => {
+                          navigate("/concert/1");
+                        }}
+                        className={styles["editBtn"]}
+                      >
+                        Edit concert tickets
+                      </button>
+                      <button onClick={() => {}}>Copy link</button>
                     </span>
                   </td>
                 </tr>
