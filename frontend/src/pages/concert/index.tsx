@@ -50,8 +50,7 @@ const Concert = () => {
                   <th>1233</th>
                   <td>
                     <span className={styles["action_btn"]}>
-                      <a href="#">Edit concert tickets</a>
-                      <a href="#">Copy link</a>
+                      <button onClick={() => null}>Edit concert tickets</button>
                     </span>
                   </td>
                 </tr>
