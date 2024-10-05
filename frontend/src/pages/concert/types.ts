@@ -1,8 +1,13 @@
-export interface ITicket {
-  id: string;
+export interface ICreateOrEditTicket {
   name: string;
-  description: string;
-  quantity: number;
+  description?: string;
   price: number;
-  concertId: string;
+  quantity: number;
+  startDateTime: string;
+  endDateTime: string;
+}
+
+export interface ITicket extends ICreateOrEditTicket {
+  ticketId: string;
+  soldOut: number;
 }

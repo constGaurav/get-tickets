@@ -59,7 +59,9 @@ const Concert = () => {
           </div>
         </div>
       </div>
-      <TicketModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      {isOpen && (
+        <TicketModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      )}
     </>
   );
 };
